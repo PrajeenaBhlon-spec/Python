@@ -34,3 +34,29 @@ def statement(name):
 
 statement("tinku")
 
+def type_check_decorator(fx):
+  def mfx(*args , **kwargs):
+    result = []
+    for item in args:
+      if type(item) == int:
+        result.append(True) 
+      else:
+        result.append(False)
+    
+    
+    if all(result):
+      print("All arguments are of int type")
+      print("processing can be done")
+      fx(*args , **kwargs)
+    else:
+      print("not valid arguments")
+      return
+  return mfx
+        
+      
+@type_check_decorator
+def operation(a , b):
+  print(a+b)
+
+operation(2 , 3)
+operation("fnckd" , 8)
