@@ -17,6 +17,10 @@
     {
       "task name": "buy groceries",
       "task status": "complete"
+    },
+    {
+      "task name": "run 4 km",
+      "task status": "complete"
     }
   ]
 }
