@@ -22,7 +22,6 @@ def add_student():
       file.close()
       time.sleep(2)
       ans = input("do you want to enter new student?(yes/no)")
-      
 
 def view_data():
   with open("csit_8th.json") as file:
@@ -30,5 +29,28 @@ def view_data():
     for data in stu_data['students']:
       print(data)
 
+def add_teacher():
+  with open("csit_8th.json" , "r") as file:
+    data = json.load(file)
+
+  
+  with open("csit_8th.json" , "w") as f:
+    data['teachers'] = [
+      {
+        "name" : "durga",
+        "subject" : "java"
+      },
+      {
+        "name" : "sonam",
+        "subject" : "spm"
+      }
+    ]
+    json.dump(data , f , indent = 2)
+
+
+
+
 view_data()
 add_student()
+add_teacher()
+
