@@ -16,3 +16,6 @@ print(even_num)
 number = [1 , 3 , 5 , 6 , 8]
 cube = list(map(lambda x : x*x*x , number))
 print(cube)
+
+max = lambda a , b: a if a > b else b
+print(f"max number: {max(7 , 20)}")
