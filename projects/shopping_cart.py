@@ -4,9 +4,9 @@ import time
 
 class cart:
   def __init__(self):
-    self.cart = {} 
+    self.cart = {}
+
   def add_product(self):
-    
     want_to_add = True
     i = 0
     while want_to_add:
@@ -34,6 +34,7 @@ class cart:
     with open("projects/products.json" , "r") as file:
       data = json.load(file)
       Total = 0
+      print(self.cart)
       for item in self.cart:
         for product in data['products']:
           if product["product"] == item:
@@ -62,10 +63,11 @@ class view_product:
     with open("projects/products.json" , "r") as f:
       data = json.load(f)
       return data['products'][current]
+    
+c = cart()
 
+while True:
 
-
-def show():
   print("1. View product")
   print("2. Add to cart")
   print("3. Remove from cart")
@@ -78,19 +80,13 @@ def show():
     product_list = view_product()
     for item in product_list:
       print(item)
-    time.sleep(2)
-    show()
+ 
   elif choice == 2:
-    c = cart()
     c.add_product()
-    time.sleep(2)
-    show()
+  
   elif choice == 5:
-    c = cart()
     c.checkout()
-    time.sleep(2)
-
+    
   elif choice == 6:
     sys.exit()
 
-show()
