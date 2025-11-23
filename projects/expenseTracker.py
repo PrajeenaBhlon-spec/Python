@@ -1,5 +1,6 @@
 import json
 from datetime import datetime
+import sys
 
 now = datetime.now()
 
@@ -13,14 +14,12 @@ class monthly_expense:
     self.cloth = cloth
     self.education = education
     self.beauty = beauty
-    
-
-  
-      
 
   def enter_expense(self):
     with open("projects/expense.json" , "r") as file:
       data = json.load(file)
+      
+
       new_entry = {}
       total = self.beauty +self.cloth + self.education +self.food + self.rent
       new_entry['name'] = self.name
@@ -60,6 +59,14 @@ month_name = now.strftime('%B')
 option = input("do you want to enter data or view data(view/enter)")
 if option == "enter":
   name = input("enter your name: ")
+  with open("projects/expense.json" , "r") as f:
+    data = json.load(f)
+    length = len(data['Expenses'])-1
+    for i in range(length):
+      if data['Expenses'][i]['name'] == name:
+        print("name already exist")
+        sys.exit()
+
   food = int(input(f"enter food expense for {now.strftime('%B')}: "))
   rent = int(input(f"enter rent expense for {now.strftime('%B')}: "))
   cloth = int(input(f"enter cloth expense for {now.strftime('%B')}:"))
