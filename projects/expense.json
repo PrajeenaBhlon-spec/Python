@@ -1,0 +1,44 @@
+{
+  "Expenses": [
+    {
+      "name": "prajeena",
+      "MONTH": "November",
+      "food": 6000,
+      "rent": 10000,
+      "cloth": 3000,
+      "education": 0,
+      "beauty": 2000,
+      "Total expense": 21000
+    },
+    {
+      "name": "pramila ",
+      "MONTH": "November",
+      "food": 6789,
+      "rent": 12000,
+      "cloth": 5678,
+      "education": 12342,
+      "beauty": 6782,
+      "Total expense": 43591
+    },
+    {
+      "name": "kabita",
+      "MONTH": "November",
+      "food": 456789,
+      "rent": 6789,
+      "cloth": 56789,
+      "education": 678,
+      "beauty": 4567,
+      "Total expense": 525612
+    },
+    {
+      "name": "shraddha",
+      "MONTH": "November",
+      "food": 56789,
+      "rent": 56789,
+      "cloth": 56789,
+      "education": 5678,
+      "beauty": 56789,
+      "Total expense": 232834
+    }
+  ]
+}
