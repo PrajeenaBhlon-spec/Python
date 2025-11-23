@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "product": "sport shoe",
+      "price": 3500,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40
+      ]
+    },
+    {
+      "product": "heel",
+      "price": 2000,
+      "size": [
+        35,
+        36,
+        39
+      ]
+    },
+    {
+      "product": "pea coat",
+      "price": 5000,
+      "size": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "product": "fur pant",
+      "price": 2500,
+      "size": [
+        "M",
+        "S",
+        "L"
+      ]
+    },
+    {
+      "product": "russian hat",
+      "price": 850,
+      "size": [
+        "M",
+        "L"
+      ]
+    }
+  ]
+}
