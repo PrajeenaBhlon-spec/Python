@@ -3,7 +3,7 @@ This project takes student data such as name , age , grade , marks. Then it calc
 
 ## How the program works 
 
-* First the program ask name , age , grade and marks for 5 subjects
+* First the program asks to enter name , age , grade and marks for 5 subjects
 * The program creates an object of dataclass named 'student' and the entered data are passed 
 * The __init__(self) method initializes the necessary data 
 * The object instance is use to call calculate_avg() and passed() method. Also ,__str__() method is defined to show student data by printing the instance of dataclass itself
