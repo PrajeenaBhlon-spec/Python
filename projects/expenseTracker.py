@@ -62,8 +62,8 @@ if option == "enter":
   with open("projects/expense.json" , "r") as f:
     data = json.load(f)
     length = len(data['Expenses'])-1
-    for i in range(length):
-      if data['Expenses'][i]['name'] == name:
+    for expense in data['Expenses']:
+      if expense['name'] == name:
         print("name already exist")
         sys.exit()
 
