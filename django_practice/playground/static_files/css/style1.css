@@ -1,49 +1,44 @@
 .left {
-  margin-top: 10vh;
-  margin-left: 10vw;
-  background-color: #dcd9d1;
-  border: 1px solid rgb(190, 160, 145);
+  margin: 0;
+  background-color: white;
+  border: 1px solid rgba(74, 146, 218, 1);
   display: flex;
-  width: 40vw;
-  height: 70vh;
-  justify-content: center;
+  width: 40%;
+  max-width: 600px;
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
 #img {
-  height: 28vh;
-  width: 15vw;
-  margin-top: 10%;
-}
-
-.first-2 {
-  margin-left: 10%;
-}
-
-.first-3 {
-  margin-left: 18%;
+  height: auto;
+  width: 40%;
+  max-width: 180px;
 }
 
 .first-2 p {
-  font-size: 28px;
-  font-weight: 500;
-  color: rgba(49, 29, 29, 0.476);
+  font-size: 1.5rem;
 }
 
 .first-3 p {
-  font-size: 20px;
-  font-weight: 500;
-  color: rgba(89, 53, 53, 0.476);
+  font-size: 1rem;
 }
 
-.first-4 {
-  margin-left: 22%;
-}
+@media (max-width: 600px) {
+  #img {
+    width: 60%;
+    margin: 0 auto;
+  }
 
-#email-btn {
-  height: 30px;
-  width: 100px;
-  background-color: rgb(190, 160, 145);
-  border: 1px none;
-  border-radius: 3vh;
-  color: rgba(18, 10, 10, 0.476);
+  .first-2 p {
+    font-size: 1.2rem;
+  }
+
+  .first-3 p {
+    font-size: 1rem;
+  }
+
+  #email-btn {
+    width: 50%;
+    height: 6vh;
+  }
 }
