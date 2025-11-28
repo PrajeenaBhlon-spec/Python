@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Student App 
+    </title>
+  </head>
+  <body>
+    <form method="POST" action="{% url 'start_app' %}">
+      {% csrf_token %}
+      <label>Student name: <input type="text" name="name" required ></label>
+      <label>Age: <input type="number" name="age" required></label>
+      <button type="submit">Save</button>
+  </body>
+</html>
