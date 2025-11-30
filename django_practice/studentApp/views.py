@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Student
 from django.http import JsonResponse
-
+import json
 # Create your views here.
 def home(request):
   return render(request , "Home.html")
@@ -29,6 +29,8 @@ def display(request):
 def delete(request):
   return render(request , "deleteStudent.html")
 
+def update(request):
+  return render(request , "updateStudent.html")
 
 def delete_student_api(request, id):
   if request.method == "POST":  
@@ -38,3 +40,25 @@ def delete_student_api(request, id):
       return JsonResponse({"message": "Student deleted successfully!"})
     except Student.DoesNotExist:
       return JsonResponse({"message": "Student not found!"}, status=404)
+    
+
+def update_student_api(request , id ):
+  if request.method == "PUT":
+    try: 
+      student = Student.objects.get(id = id)
+      data = json.loads(request.body)
+      name = data.get("name")
+      age = data.get("age")
+      grade = data.get("grade")
+      if name != "":
+        student.name = name 
+      if age != "":
+        student.age = age
+      if grade != "":
+        student.grade = grade
+      student.save()
+      return JsonResponse({"message": "student updated succesfully"})
+    
+    except Student.DoesNotExist:
+      return JsonResponse({"message": "Student not found"})
+  

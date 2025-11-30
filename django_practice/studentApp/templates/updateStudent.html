@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Student App 
+    </title>
+  </head>
+  <body>
+    <div>
+      <label>enter id of the student you want to update: <input type="number" id="stu-id"></label>
+      Enter the data you want to update otherwise leave them blank:
+      <label>Name: <input type="text" id="name"></label>
+      <label>Age: <input type="number" id="age"></label>
+      <label>Grade: <input type="number" id="grade"></label>
+      <button onclick="update()">Update</button>
+    </div>
+    <div id="message">
+    </div>
+    <script>
+      async function update(){
+        let id = parseInt(document.getElementById("stu-id").value);
+        let payload = {
+          name : document.getElementById("name").value,
+          age : parseInt(document.getElementById("age").value),
+          grade : parseInt(document.getElementById("grade").value)
+        }
+        
+
+        let response = await fetch(`/studentApp/api/students/update/${id}/` , {
+          method : "PUT",
+          headers:{
+            "Content-Type": "application/json",
+            "X-CSRFToken" : getCookie("csrftoken")
+          },
+          body : JSON.stringify(payload)
+        });
+        let data = await response.json();
+        document.getElementById("message").innerText = data.message;
+      }
+      function getCookie(name){
+        let cookieValue = null;
+        if (document.cookie && document.cookie != ""){
+          const cookies = document.cookie.split(";");
+          for (let cookie of cookies){
+            cookie = cookie.trim()
+            if (cookie.startsWith(name + "=")){
+              cookieValue = decodeURIComponent(cookie.slice(name.length + 1))
+              break
+            }
+          }
+        }
+        return cookieValue
+      }
+    </script>
+
+  </body>
+
+</html>
