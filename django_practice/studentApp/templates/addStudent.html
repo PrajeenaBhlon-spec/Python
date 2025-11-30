@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Student App 
+    </title>
+  </head>
+  <body>
+    <form method="POST" action="{% url 'start_app' %}">
+      {% csrf_token %}
+      <label>Student name: <input id="name" type="text" name="name" required ></label>
+      <label>Age: <input id="age" type="number" name="age" required></label>
+      <label>Grade: <input id="grade" type="number" name="grade" required></label>
+      <button onclick="verifyData()" type="submit">Save</button>
+    </form>
+    
+    <script>
+      function verifyData(){
+        let name = document.getElementById("name").value;
+        let age = parseInt(document.getElementById("age").value);
+        let grade = parseInt(document.getElementById("grade").value);
+        if (age < 3 || age > 17){
+          alert("Invalid age")
+        }
+        if (grade <= 0 || grade > 10){
+          alert("invalid grade")
+        }
+        if (name.length <= 2){
+          alert("invalid name")
+        }
+      }
+    </script>
+  </body>
+</html>

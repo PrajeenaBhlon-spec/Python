@@ -6,10 +6,26 @@
     </title>
   </head>
   <body>
-    <form method="POST" action="{% url 'start_app' %}">
-      {% csrf_token %}
-      <label>Student name: <input type="text" name="name" required ></label>
-      <label>Age: <input type="number" name="age" required></label>
-      <button type="submit">Save</button>
+    <div>
+      <button onclick="addStudent()">Add student</button>
+      <button onclick="removeStudent()">Delete student</button>
+      <button onclick="updateStudent()">Update student</button>
+      <button onclick="displayStudent()">Display student</button>
+    </div>
+    
+    <script>
+      function addStudent(){
+        window.location.href = "/studentApp/addStudent/"
+      }
+      function removeStudent(){
+        window.location.href ="/studentApp/deleteStudent/"
+      }
+      function updateStudent(){
+        window.location.href = "/studentApp/updateStudent/"
+      }
+      function displayStudent(){
+        window.location.href = "/studentApp/displayStudent/"
+      }
+    </script>
   </body>
 </html>
