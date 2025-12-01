@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employee</title>
+    <style>
+      
+    </style>
+  </head>
+   
+  <body>
+    <div class="buttons">
+      <button onclick="redirectToAdd()" >Add employee</button>
+      <button onclick="redirectToDisplay()">Display employee</button>
+      <button onclick="redirectToDelete()">Delete employee </button>
+      <button onclick="redirectToUpdate()">Update employee</button>
+    </div>
+    <script>
+      function redirectToAdd(){
+        window.location.href = "/employee/addEmployee/";
+      }
+      function redirectToDisplay(){
+        window.location.href = "/employee/displayEmployee/";
+      }
+      function redirectToDelete(){
+        window.location.href = "/employee/deleteEmployee/";
+      }
+      function redirectToUpdate(){
+        window.location.href = "/employee/updateEmployee/";
+      }
+    </script>
+  </body>
+</html>

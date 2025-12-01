@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employee</title>
+  </head>
+
+  <body>
+    <p>Delete employee data by entering employee id below:</p>
+    <div>
+      <label>Enter employee id:<input type="number" id="emp-id" required></label>
+      <button onclick="deletion()">Delete</button>
+    </div>
+    <p id="message"></p>
+
+    <script>
+      async function deletion(){
+        let id = parseInt(document.getElementById("emp-id").value);
+        let response = await fetch(`/employee/api/employees/delete/${id}/`,{
+          method : "POST",
+          headers : {
+            "X-CSRFToken" : getCookie("csrftoken")
+          }
+        });
+        let data = await response.json();
+        document.getElementById("message").innerText = data.message;
+      }
+      function getCookie(name){
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== ""){
+          const cookies = document.cookie.split(";");
+          for (let cookie of cookies){
+            cookie = cookie.trim();
+            if (cookie.startsWith(name + "=")){
+              cookieValue = decodeURIComponent(cookie.slice(name.length + 1));
+              break
+            }
+          }
+        }
+        return cookieValue;
+      }
+    </script>
+  </body>
+</html>

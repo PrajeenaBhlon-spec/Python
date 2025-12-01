@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employee</title>
+  </head>
+
+  <body>
+    <p>Update employee data by entering employee id and changed data below:</p>
+    <div>
+      <label>Enter employee id:<input type="number" id="emp-id" required></label>
+      <label>Enter new name:<input type="text" id="name" required></label>
+      <label>Enter new address:<input type="text" id="address" required></label>
+      <label>Enter new employee type:<input type="text" id="emp-type" required></label>
+      <label>Enter new salary:<input type="number" id="salary" required></label>
+      <button onclick="update()">Update data</button>
+    </div>
+    <p id="message"></p>
+
+    <script>
+      async function update(){
+        let id = parseInt(document.getElementById("emp-id").value) ;
+        let empData = {
+          name: document.getElementById("name").value ,
+          address: document.getElementById("address").value ,
+          empType : document.getElementById("emp-type").value ,
+          salary : document.getElementById("salary").value
+        }
+        
+        let response = await fetch(`/employee/api/employees/update/${id}/`,{
+          method : "PUT",
+          headers : {
+            "Content-Type" : "application/json",
+            "X-CSRFToken" : getCookie("csrftoken")
+          },
+          body : JSON.stringify(empData)
+        });
+        let data = await response.json();
+        document.getElementById("message").innerText = data.message;
+      }
+      function getCookie(name){
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== ""){
+          const cookies = document.cookie.split(";");
+          for (let cookie of cookies){
+            cookie = cookie.trim();
+            if (cookie.startsWith(name + "=")){
+              cookieValue = decodeURIComponent(cookie.slice(name.length + 1));
+              break
+            }
+          }
+        }
+        return cookieValue;
+      }
+    </script>
+  </body>
+</html>

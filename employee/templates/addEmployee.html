@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employee</title>
+  </head>
+
+  <body>
+    <form method="POST" action={% url 'add-employee' %}>
+      {% csrf_token %}
+      <label>Employee name:<input type="text" name="name" id="name" required></label>
+      <label>Employee address:<input type="text" name="address" id="adrress" required></label>
+      <label>Employee type:<input type="text" name="empType" id="emptype"required></label>
+      <label>Salary:<input type="number" name="salary" id="salary" required></label>
+      <button type="submit" onclick="verification()">Save</button>
+    </form>
+    <button onclick="Home()">Go to home page</button>
+    <script>
+      function verification(){
+        let name = document.getElementById("name").value;
+        let address = document.getElementById("address").value;
+        let empType = document.getElementById("emptype").value;
+        let salary = parseInt(document.getElementById("salary").value);
+        if (salary <= 0){
+          alert("salary cannot be zero or less than zero")
+        }
+        if (name.length == 0 || address.length == 0 || empType.length == 0){
+          alert("invalid data , reenter ")
+        }
+      }
+      function Home(){
+        window.location.href = "/employee/Home/"
+      }
+    </script>
+  </body>
+</html>

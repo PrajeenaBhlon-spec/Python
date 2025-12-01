@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employee</title>
+  </head>
+
+  <body>
+    <div id="employee-list">
+
+    </div>
+    <script>
+      async function display(){
+        let response = await fetch(`/employee/api/employees/`);
+        let employees = await response.json();
+
+        let container = document.getElementById("employee-list");
+
+        employees.forEach(emp => {
+          container.innerHTML += `
+          <p>Emp id= ${emp.id}</p>
+          <p>Emp name= ${emp.name}</p>
+          <p>Emp address = ${emp.address}</p>
+          <p>Emp type= ${emp.empType}</p>
+          <p>Emp salary = ${emp.salary}</p>
+          `
+        });
+      }
+      display()
+    </script>
+  </body>
+</html>
