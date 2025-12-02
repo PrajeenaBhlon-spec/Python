@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Employee</title>
-  </head>
-
-  <body>
-    <p>Update employee data by entering employee id and changed data below:</p>
+{% extends 'navbar.html'%}
+{% block body%}
+  <p>Update employee data by entering employee id and changed data below:</p>
     <div>
       <label>Enter employee id:<input type="number" id="emp-id" required></label>
       <label>Enter new name:<input type="text" id="name" required></label>
@@ -52,5 +47,5 @@
         return cookieValue;
       }
     </script>
-  </body>
-</html>
+
+{% endblock body%}

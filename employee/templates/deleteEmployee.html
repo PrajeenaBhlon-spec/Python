@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Employee</title>
-  </head>
-
-  <body>
-    <p>Delete employee data by entering employee id below:</p>
+{% extends 'navbar.html'%}
+{% block body %}
+  <p>Delete employee data by entering employee id below:</p>
     <div>
       <label>Enter employee id:<input type="number" id="emp-id" required></label>
       <button onclick="deletion()">Delete</button>
@@ -39,5 +34,4 @@
         return cookieValue;
       }
     </script>
-  </body>
-</html>
+{% endblock body %}

@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Employee</title>
-  </head>
-
-  <body>
-    <form method="POST" action={% url 'add-employee' %}>
+{% extends 'navbar.html'%}
+{% block body %}
+  <form method="POST" action={% url 'add-employee' %}>
       {% csrf_token %}
       <label>Employee name:<input type="text" name="name" id="name" required></label>
       <label>Employee address:<input type="text" name="address" id="adrress" required></label>
@@ -31,5 +26,4 @@
         window.location.href = "/employee/Home/"
       }
     </script>
-  </body>
-</html>
+{% endblock body %}

@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Employee</title>
-    <style>
-      
-    </style>
-  </head>
-   
-  <body>
-    <div class="buttons">
+{% extends 'navbar.html'%}
+{% block body %}
+  <div class="buttons">
       <button onclick="redirectToAdd()" >Add employee</button>
       <button onclick="redirectToDisplay()">Display employee</button>
       <button onclick="redirectToDelete()">Delete employee </button>
@@ -28,5 +20,4 @@
         window.location.href = "/employee/updateEmployee/";
       }
     </script>
-  </body>
-</html>
+{% endblock body %}
