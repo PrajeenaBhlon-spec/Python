@@ -11,7 +11,7 @@ def register(request):
     email = request.POST.get('email')
     username = request.POST.get('username')
     password = request.POST.get('password')
-    CustomUser.objects.create_user(email=email , username = username , password = password)
+    CustomUser.objects.create_user(email=email , username = username , password = password , is_active = True)
     return redirect('login/')
   
   return render(request , "register.html")
