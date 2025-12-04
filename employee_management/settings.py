@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'employee',
+    'authentication_emp_model',
 ]
 
 MIDDLEWARE = [
@@ -115,8 +116,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
-
+STATIC_URL = 'static_files/'
+STATICFILES_DIRS = [
+  BASE_DIR / "employee/static_files"
+]
+AUTH_USER_MODEL = 'authentication_emp_model.CustomUser'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
