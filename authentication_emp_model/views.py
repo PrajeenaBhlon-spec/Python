@@ -1,5 +1,6 @@
 from django.shortcuts import render , redirect
-from .models import CustomUser
+from .models import CustomUser 
+from employee.models import Employee
 from django.contrib.auth import authenticate , login , logout
 from django.views.decorators.cache import cache_control
 from django.contrib.auth.decorators import login_required
@@ -9,14 +10,20 @@ from django.contrib.auth.decorators import login_required
 def landing_page(request):
   return render(request , 'landing.html')
 
+
 def register(request):
   if request.method == "POST":
     email = request.POST.get('email')
     username = request.POST.get('username')
     password = request.POST.get('password')
-    CustomUser.objects.create_user(email=email , username = username , password = password , is_active = True)
+    name = request.POST['name']
+    address = request.POST['address']
+    empType = request.POST['empType']
+    salary = request.POST['salary']
+    user = CustomUser.objects.create_user(email=email , username = username , password = password , is_active = True)
+    Employee.objects.create(user= user , name=name , address = address , empType= empType , salary = salary )
     return redirect('login/')
-  
+
   return render(request , "register.html")
 
 def loginEmployee(request):
