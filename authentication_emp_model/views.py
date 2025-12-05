@@ -1,6 +1,9 @@
 from django.shortcuts import render , redirect
 from .models import CustomUser
-from django.contrib.auth import authenticate , login
+from django.contrib.auth import authenticate , login , logout
+from django.views.decorators.cache import cache_control
+from django.contrib.auth.decorators import login_required
+
 
 
 def landing_page(request):
@@ -28,6 +31,12 @@ def loginEmployee(request):
       return render(request, "login.html")
   return render(request, "login.html")
 
-
+@login_required
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def home(request):
   return render(request , "hero.html")
+
+
+def logout_user(request):
+  logout(request)
+  return redirect("login")

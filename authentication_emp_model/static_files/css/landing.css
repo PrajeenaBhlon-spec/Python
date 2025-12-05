@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: rgb(244, 239, 232);
+}
+
+.landing {
+  width: 40%;
+  max-width: 500px;
+  min-width: 280px;
+  padding: 20px;
+  border: 1px solid rgba(83, 78, 78, 0.227);
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+h1,
+p {
+  padding-left: 10px;
+  padding-bottom: 20px;
+}
+
+.link {
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  color: rgba(13, 123, 201, 0.947);
+}
+
+
+
+.link-p {
+  font-size: 20px;
+  color: black;
+  font-weight: 600;
+}

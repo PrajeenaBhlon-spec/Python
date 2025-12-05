@@ -1,14 +1,26 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
   <head>
     <title>Login page</title>
+    <link rel="stylesheet" href="{%static 'css/login.css'%}">
   </head>
   <body>
-    <form method="POST" action={% url 'login'%}>
+    
+    <form method="POST" action={% url 'login'%} class="login">
       {% csrf_token %}
-      <label>Email: <input type="email" name="email" id="email" required></label>
-      <label>password: <input type="password" name="password" id="pws" required></label>
-      <button type="submit">Login</button>
+      <div class="form-group">
+        <label>Email: </label>
+        <input type="email" name="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label>password:</label> 
+        <input type="password" name="password" id="pws" required>
+      </div>
+      <div class="button">
+        <button type="submit" id="submit-btn">Login</button>
+      </div>
     </form>
+    
   </body>
-  </html>
+</html>

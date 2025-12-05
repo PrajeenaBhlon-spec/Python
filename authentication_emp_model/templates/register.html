@@ -1,15 +1,28 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
   <head>
     <title>Login page</title>
+    <link rel="stylesheet" href="{% static 'css/register.css'%}">
   </head>
   <body>
-    <form method="POST" action={% url 'register'%}>
+    <form method="POST" action={% url 'register'%} class="register">
       {% csrf_token %}
-      <label>Email: <input type="email" name="email" id="email" required></label>
-      <label>Username: <input type="text" name="username" id="username" required></label>
-      <label>password: <input type="password" name="password" id="pws" required></label>
-      <button type="submit">Register</button>
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" name="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label>Username:</label> 
+        <input type="text" name="username" id="username" required>
+      </div>
+      <div class="form-group">
+        <label>password:</label> 
+        <input type="password" name="password" id="pws" required>
+      </div>
+      <div class="button">
+        <button type="submit" id="submit-btn">Register</button>
+      </div>
     </form>
   </body>
   </html>

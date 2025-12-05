@@ -1,11 +1,22 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
     <title>Welcome</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css'%}">
 </head>
 <body>
-    <h1>Welcome to Employee Portal</h1>
-    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
-    <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    <div class="landing">
+        <div>
+            <h1 id="welcome">Welcome to Employee Portal</h1>
+        </div>
+        <div>
+            <p class="link-p">Already have an account? <a class="link" href="{% url 'login' %}">Login</a></p>
+        </div>
+        <div>
+            <p class="link-p">Don't have an account? <a class="link" href="{% url 'register' %}">Register</a></p>
+        </div>    
+    </div>
+    
 </body>
 </html>

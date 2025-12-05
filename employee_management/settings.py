@@ -49,7 +49,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.cache.CacheMiddleware',
 ]
+CACHE_MIDDLEWARE_SECONDS = 0
+CACHE_MIDDLEWARE_KEY_PREFIX = ""
 
 ROOT_URLCONF = 'employee_management.urls'
 
@@ -118,7 +121,8 @@ USE_TZ = True
 
 STATIC_URL = 'static_files/'
 STATICFILES_DIRS = [
-  BASE_DIR / "employee/static_files"
+  BASE_DIR / "employee/static_files" ,
+  BASE_DIR / "authentication_emp_model/static_files"
 ]
 AUTH_USER_MODEL = 'authentication_emp_model.CustomUser'
 # Default primary key field type

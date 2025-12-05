@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: rgb(244, 239, 232);
+}
+
+.login {
+  width: 35%;
+  height: 250px;
+  max-width: 500px;
+  min-width: 280px;
+  padding: 20px;
+  border: 1px solid rgba(83, 78, 78, 0.227);
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  align-content: center;
+}
+
+.form-group {
+  padding-left: 20%;
+  padding-bottom: 10%;
+}
+
+label {
+  font-size: 20px;
+}
+
+#submit-btn {
+  width: 60px;
+  height: 35px;
+  border: 1px;
+  border-radius: 1vh;
+  color: white;
+  font-size: 15px;
+  background-color: rgba(13, 123, 201, 0.947);
+
+}
+
+.button {
+  padding-left: 40%;
+}

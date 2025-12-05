@@ -1,9 +1,16 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
   <head>
     <title>Login page</title>
+    <link rel="stylesheet" href="{% static 'css/hero.css'%}">
   </head>
   <body>
+    <div class="navbar">
+      <div class="logout">
+        <a href={% url 'log-out'%}>Log out</a>
+      </div>
+    </div>
     <p>You are logged in !</p>
   </body>
   </html>

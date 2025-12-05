@@ -1,0 +1,18 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 20px;
+
+}
+
+.logout a {
+  text-decoration: none;
+  font-size: 20px;
+  color: rgba(13, 123, 201, 0.947);
+}
+
+p {
+  font-size: 30px;
+  font-family: 400;
+}
