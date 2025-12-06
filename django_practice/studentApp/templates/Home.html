@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Student App 
+    </title>
+  </head>
+  <body>
+    <div>
+      <button onclick="addStudent()">Add student</button>
+      <button onclick="removeStudent()">Delete student</button>
+      <button onclick="updateStudent()">Update student</button>
+      <button onclick="displayStudent()">Display student</button>
+    </div>
+    
+    <script>
+      function addStudent(){
+        window.location.href = "/studentApp/addStudent/"
+      }
+      function removeStudent(){
+        window.location.href ="/studentApp/deleteStudent/"
+      }
+      function updateStudent(){
+        window.location.href = "/studentApp/updateStudent/"
+      }
+      function displayStudent(){
+        window.location.href = "/studentApp/displayStudent/"
+      }
+    </script>
+  </body>
+</html>

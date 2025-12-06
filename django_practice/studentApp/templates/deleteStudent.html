@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Student App 
+    </title>
+  </head>
+  <body>
+    <div>
+      <label>Enter id of the student you want to delete: <input type="number" name="id" id="stu-id" required>
+        <button id="del-btn" onclick="deleteStudent()">Delete</Delete>
+    </div>
+    <div id="message">
+    </div>
+    <script>
+      async function deleteStudent(){
+        let id = parseInt(document.getElementById("stu-id").value);
+
+        let response = await fetch(`/studentApp/api/students/delete/${id}/` , {
+          method : "POST",
+          headers : {
+            "X-CSRFToken": getCookie("csrftoken")
+          }
+        });
+        let data = await response.json();
+        document.getElementById("message").innerText = data.message;
+      }
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+          const cookies = document.cookie.split(';');
+          for (let cookie of cookies) {
+            cookie = cookie.trim();
+            if (cookie.startsWith(name + '=')) {
+              cookieValue = decodeURIComponent(cookie.slice(name.length + 1));
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+      
+    </script>
+  </body>
+
+</html>

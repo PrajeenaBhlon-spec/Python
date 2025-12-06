@@ -1,0 +1,54 @@
+{
+  "students": [
+    {
+      "name": "prajeena",
+      "phone": "9821671211",
+      "address": "padampokhari"
+    },
+    {
+      "name": "bikash",
+      "phone": "9821671211",
+      "address": "kamane"
+    },
+    {
+      "name": "dinesh",
+      "phone": "9821671211",
+      "address": "hid"
+    },
+    {
+      "name": "nibedika",
+      "phone": "1234567890",
+      "address": "piple"
+    },
+    {
+      "name": "kripa",
+      "phone": "0987654321",
+      "address": "children park"
+    },
+    {
+      "name": "nikhil",
+      "phone": "1234567890",
+      "address": "chaukitol"
+    },
+    {
+      "name": "prajwal",
+      "phone": "1234567890",
+      "address": "kamal dada"
+    },
+    {
+      "name": "pranisha",
+      "phone": "0987654321",
+      "address": "thanavareng"
+    }
+  ],
+  "teachers": [
+    {
+      "name": "durga",
+      "subject": "java"
+    },
+    {
+      "name": "sonam",
+      "subject": "spm"
+    }
+  ]
+}

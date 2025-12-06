@@ -1,0 +1,26 @@
+{
+  "prajeena_task": [
+    {
+      "task name": "making bed",
+      "task status": "complete"
+    },
+    {
+      "task name": "learn function",
+      "task status": "complete"
+    },
+    {
+      "task name": "learn python virtual environment",
+      "task status": "incomplete"
+    }
+  ],
+  "pramila_task": [
+    {
+      "task name": "buy groceries",
+      "task status": "complete"
+    },
+    {
+      "task name": "run 4 km",
+      "task status": "complete"
+    }
+  ]
+}

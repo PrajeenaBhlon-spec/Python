@@ -1,0 +1,44 @@
+.left {
+  margin: 0;
+  background-color: white;
+  border: 1px solid rgba(74, 146, 218, 1);
+  display: flex;
+  width: 40%;
+  max-width: 600px;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+#img {
+  height: auto;
+  width: 40%;
+  max-width: 180px;
+}
+
+.first-2 p {
+  font-size: 1.5rem;
+}
+
+.first-3 p {
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  #img {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .first-2 p {
+    font-size: 1.2rem;
+  }
+
+  .first-3 p {
+    font-size: 1rem;
+  }
+
+  #email-btn {
+    width: 50%;
+    height: 6vh;
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Student App 
+    </title>
+  </head>
+  <body>
+    <div id="student-list">
+      
+    </div>
+
+    <script>
+      async function students(){
+        let response = await fetch(`/studentApp/api/students/`);
+        let students = await response.json();
+
+        let container = document.getElementById("student-list");
+
+        students.forEach(student => {
+          container.innerHTML += `
+            <p>Id : ${student.id}</p>
+            <p>Name: ${student.name}</p>
+            <p>Age: ${student.age}</p>
+            <p>Grade: ${student.grade}</p>
+           `
+        })
+      }
+      students()
+    </script>
+  </body>
+
+</html>
