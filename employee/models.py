@@ -9,4 +9,4 @@ class Employee(models.Model):
   salary = models.IntegerField()
 
   def __str__(self):
-    return self.user.email
+    return self.user.username 
